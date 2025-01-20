@@ -1,0 +1,255 @@
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "DM Sans", serif;
+    font-size: 18px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    width: 90%;
+    margin: 5% auto;
+}
+
+.margin-top-adj + .margin-top-adj {
+    margin-top: 1em;
+}
+
+.grid {
+    display: grid;
+    gap: 2.5%;
+}
+
+.grid__component {
+    padding: 7%;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
+                0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* Grid 1 stylings */
+.grid__component--1 {
+    background-color: hsl(256, 67%, 59%);
+    color: hsl(0, 0%, 100%);
+    text-align: center;
+}
+
+.grid__component--title {
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+.grid__component--light {
+    color: hsl(39, 100%, 71%);
+}
+
+.grid__component--img {
+    width: 60%;
+    margin-top: 1em;
+}
+
+.grid__component--sub-title {
+    font-size: 18px;
+    color: hsla(0, 0%, 100%, 0.611);
+}
+
+/* Grid 2 stylings */
+.grid__component--2 {
+    font-weight: 600;
+    color: hsl(0, 0%, 7%);
+}
+
+.grid__component--imgs {
+    margin-bottom: 1em;
+}
+
+/* Grid 3 stylings */
+.grid__component--3 {
+    background-color: hsl(39, 100%, 71%);
+    text-align: start;
+    font-weight: 600;
+    padding-bottom: 0;
+}
+
+.calender--img {
+    width: 80%;
+}
+
+/* Grid 4 stylings */
+.grid__component--4 {
+    background-color: hsl(254, 88%, 90%);
+    text-align: center;
+}
+
+.grid__component--4-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.schedule--img {
+    width: 90%;
+    margin-bottom: 1em;
+}
+
+.grid__component--4-desc {
+    color: hsla(0, 0%, 7%, 0.573);
+}
+
+/* Grid 5 stylings */
+.grid__component--5 {
+    text-align: center;
+    background-color: hsl(256, 67%, 59%);
+    color: hsl(0, 0%, 100%);
+}
+
+.grid__component--5-img {
+    width: 70%;
+    margin-bottom: 1em;
+}
+
+.grid__component--5-desc {
+    font-size: 24px;
+    width: 70%;
+    margin: 0 auto;
+    font-weight: 600;
+    line-height: 1;
+}
+
+/* Grid 6 stylings */
+.grid__component--6-container {
+    width: 70%;
+}
+
+.grid__component--6-title {
+    font-size: xx-large;
+}
+
+.grid__component--6-sub-title {
+    color: hsla(0, 0%, 7%, 0.651);
+    margin-top: 0.5em;
+}
+
+.grid__component--6-img {
+    width: 80%;
+}
+
+/* Last grid stylings */
+.grid__row .grid__component + .grid__component{
+    margin-top: 15%;
+}
+
+/* Grid 7 stylings */
+.grid__component--7 {
+    background-color: hsl(31, 66%, 93%);
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.grid__component--7-light {
+    color: hsl(256, 67%, 59%);
+}
+
+.grid__component--7-img {
+    margin-top: 0.5em;
+    width: 70%;
+}
+
+/* Grid 8 stylings */
+.grid__component--8 {
+    background-color: hsl(39, 100%, 71%);
+}
+
+.grid__component--8-title {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+/* attribution styling */
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+/* Responsive Design */
+@media (min-width: 750px) and (max-width: 950px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 950px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+            "empty          social      social      schedule"
+            "empty          social      social      schedule"
+            "empty          accounts    posting     schedule"
+            "empty          growth      grow        grow"
+            "empty          growth      grow        grow"
+            "attribution    attribution attribution attribution";
+    }
+
+    .grid__component--1 {
+        grid-area: social;
+    }
+
+    .grid__component--2 {
+        grid-area: accounts;
+    }
+
+    .grid__component--3 {
+        grid-area: posting;
+    }
+
+    .grid__component--4 {
+        grid-area: schedule;
+    }
+    
+    .grid__component--5 {
+        grid-area: grow;
+    }
+
+    .grid__component--5-img {
+        width: 25%;
+    }
+
+    .grid__component--6 {
+        grid-area: growth;
+    }
+
+    .grid__component--7 {
+        grid-area: create-post;
+        height: 47.5%;
+    }
+
+    .grid__component--8 {
+        grid-area: ai;
+        height: 47.5%;
+    }
+
+    .grid__row {
+        grid-area: empty;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .attribution {
+        grid-area: attribution;
+    }
+}
